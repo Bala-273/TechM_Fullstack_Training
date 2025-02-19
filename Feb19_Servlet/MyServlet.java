@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 /**
  * Servlet implementation class MyServlet
  */
-@WebServlet("/MyServlet") // ✅ Registers servlet at /MyServlet
+@WebServlet("/MyServlet") //Registers servlet at /MyServlet
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
