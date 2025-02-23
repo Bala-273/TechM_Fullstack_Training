@@ -1,8 +1,9 @@
 package Task_7;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class InsertAtEnd {
+public class IterateLinkedList {
     public static void main(String[] args) {
         LinkedList<String> colours = new LinkedList<>();
         colours.add("Black");
@@ -12,10 +13,10 @@ public class InsertAtEnd {
         colours.add("Red");
         colours.add("Burgundy");
 
-        System.out.println("Original LinkedList: " + colours);
-
-        colours.addLast("Blue");
-
-        System.out.println("LinkedList after inserting at the end: " + colours);
+        System.out.println("Iterating LinkedList:");
+        Iterator<String> iterator = colours.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }

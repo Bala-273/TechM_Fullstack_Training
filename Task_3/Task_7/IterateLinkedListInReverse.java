@@ -1,8 +1,9 @@
 package Task_7;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
-public class InsertAtEnd {
+public class IterateLinkedListInReverse {
     public static void main(String[] args) {
         LinkedList<String> colours = new LinkedList<>();
         colours.add("Black");
@@ -12,10 +13,11 @@ public class InsertAtEnd {
         colours.add("Red");
         colours.add("Burgundy");
 
-        System.out.println("Original LinkedList: " + colours);
+        ListIterator<String> iterator = colours.listIterator(colours.size());
 
-        colours.addLast("Blue");
-
-        System.out.println("LinkedList after inserting at the end: " + colours);
+        System.out.println("Iterating LinkedList in Reverse Order:");
+        while (iterator.hasPrevious()) {
+            System.out.println(iterator.previous());
+        }
     }
 }

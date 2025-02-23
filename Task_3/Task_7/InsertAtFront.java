@@ -2,7 +2,7 @@ package Task_7;
 
 import java.util.LinkedList;
 
-public class InsertAtEnd {
+public class InsertAtFront {
     public static void main(String[] args) {
         LinkedList<String> colours = new LinkedList<>();
         colours.add("Black");
@@ -14,8 +14,8 @@ public class InsertAtEnd {
 
         System.out.println("Original LinkedList: " + colours);
 
-        colours.addLast("Blue");
+        colours.addFirst("Purple");
 
-        System.out.println("LinkedList after inserting at the end: " + colours);
+        System.out.println("LinkedList after inserting at the front: " + colours);
     }
 }
