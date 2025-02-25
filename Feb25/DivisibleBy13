@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function CheckDivisibleby13(props) {
+    const number = props.num;
+
+    if(number%13 === 0){
+        return <h1>{number} is divisible by 13</h1>;
+    }
+    else{
+        return <h1>{number} is not divisible by 13</h1>
+    }
+    
+}
+
+return( 
+    <>
+        {number % 13 ===0 &&  <h1>{number } is divisible by 13</h1>}
+        {number % 13 !=0 &&<h1>{number} is not divisible by 13</h1>}
+
+    </>
+); 
+
+return(
+    <>
+        {number % 13 ===0 ? (<h1>{number} is divisible by 13</h1>):
+            (<h1>{number} is not divisible by 13</h1>)}
+        </>
+);
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<CheckDivisibleby13 num={262} />);
+
