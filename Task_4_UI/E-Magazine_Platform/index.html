@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Magazine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">E-Magazine</a>
+            
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search articles..." class="search-bar">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active" data-category="home">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-category="sports">Sports</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-category="economics">Economics</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-category="technology">Technology</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" data-category="entertainment">Entertainment</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="slider-container">
+    <button class="prev-slide">&#10094;</button> 
+    <div class="slider">
+    </div>
+    <button class="next-slide">&#10095;</button> 
+</div>
+
+
+    <main class="container">
+        <section id="home-news" class="category-section active">
+            <h2>Featured News</h2>
+            <div class="articles-grid"></div>
+        </section>
+
+        <section id="sports-news" class="category-section">
+            <h2>Sports News</h2>
+            <div class="articles-grid"></div>
+        </section>
+        <section id="economics-news" class="category-section">
+            <h2>Economics News</h2>
+            <div class="articles-grid"></div>
+        </section>
+        <section id="technology-news" class="category-section">
+            <h2>Technology News</h2>
+            <div class="articles-grid"></div>
+        </section>
+        <section id="entertainment-news" class="category-section">
+            <h2>Entertainment News</h2>
+            <div class="articles-grid"></div>
+        </section>
+    </main>
+
+    <section class="comments-section">
+        <h2>Leave a Comment</h2>
+        <form id="commentForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="comment" placeholder="Write your comment..." required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>    
+
+</body>
+</html>
