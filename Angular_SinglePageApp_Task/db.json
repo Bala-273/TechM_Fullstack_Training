@@ -1,0 +1,270 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "name": "Wedding Planning",
+      "description": "Complete wedding event management",
+      "price": 5000,
+      "image": "services/wedding.jpeg",
+      "eventType": "wedding"
+    },
+    {
+      "id": "2",
+      "name": "Engagement Ceremony",
+      "description": "Special event planning for engagement ceremonies",
+      "price": 4000,
+      "image": "services/engagement.jpg",
+      "eventType": "wedding"
+    },
+    {
+      "id": "3",
+      "name": "Anniversary Celebration",
+      "description": "Event planning for wedding anniversaries",
+      "price": 4500,
+      "image": "services/anniversary.jpeg",
+      "eventType": "wedding"
+    },
+    {
+      "id": "4",
+      "name": "Birthday Party",
+      "description": "Birthday event organization",
+      "price": 3000,
+      "image": "services/birthday.jpeg",
+      "eventType": "birthday"
+    },
+    {
+      "id": "5",
+      "name": "Kids Birthday Bash",
+      "description": "Fun-filled birthday parties for kids",
+      "price": 2500,
+      "image": "services/kids-birthday.jpeg",
+      "eventType": "birthday"
+    },
+    {
+      "id": "6",
+      "name": "Surprise Birthday Party",
+      "description": "Organizing surprise birthday parties with special themes",
+      "price": 3500,
+      "image": "services/surprise-birthday.jpeg",
+      "eventType": "birthday"
+    },
+    {
+      "id": "7",
+      "name": "Corporate Event",
+      "description": "Business and corporate event handling",
+      "price": 8000,
+      "image": "services/corporate.jpeg",
+      "eventType": "corporate"
+    },
+    {
+      "id": "8",
+      "name": "Product Launch",
+      "description": "Handling product launch events with media coverage",
+      "price": 25000,
+      "image": "services/product-launch.jpg",
+      "eventType": "corporate"
+    },
+    {
+      "id": "9",
+      "name": "Tech Conference",
+      "description": "Handling large-scale tech conferences",
+      "price": 50000,
+      "image": "services/tech conference.jpeg",
+      "eventType": "corporate"
+    },
+    {
+      "id": "10",
+      "name": "Business Networking Meetup",
+      "description": "Facilitating professional networking events",
+      "price": 10000,
+      "image": "services/networking.jpeg",
+      "eventType": "corporate"
+    },
+    {
+      "id": "11",
+      "name": "College Cultural Fest",
+      "description": "Organizing cultural and technical events in colleges",
+      "price": 30000,
+      "image": "services/college-fest.jpeg",
+      "eventType": "college"
+    },
+    {
+      "id": "12",
+      "name": "Intercollege Sports Competition",
+      "description": "Managing inter-college sports events",
+      "price": 20000,
+      "image": "services/college-sports.jpeg",
+      "eventType": "college"
+    },
+    {
+      "id": "13",
+      "name": "College Seminars & Workshops",
+      "description": "Arranging educational seminars and technical workshops",
+      "price": 15000,
+      "image": "services/college-workshop.jpeg",
+      "eventType": "college"
+    },
+    {
+      "id": "14",
+      "name": "Fashion Show",
+      "description": "Complete fashion show event setup",
+      "price": 15000,
+      "image": "services/fashion show.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "15",
+      "name": "Gaming Tournament",
+      "description": "Organizing e-sports and gaming competitions",
+      "price": 20000,
+      "image": "services/gaming.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "16",
+      "name": "Film Screening",
+      "description": "Hosting private and public film screenings",
+      "price": 10000,
+      "image": "services/film-screening.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "17",
+      "name": "Music Concert",
+      "description": "Organizing live music concerts and festivals",
+      "price": 20000,
+      "image": "services/music-concert.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "18",
+      "name": "Dance Competition",
+      "description": "Organizing dance contests and shows",
+      "price": 9000,
+      "image": "services/dance-competition.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "19",
+      "name": "Comedy Show",
+      "description": "Hosting stand-up comedy and laughter nights",
+      "price": 8000,
+      "image": "services/comedy-show.jpeg",
+      "eventType": "entertainment"
+    },
+    {
+      "id": "20",
+      "name": "Art Exhibition",
+      "description": "Managing art shows and gallery events",
+      "price": 15000,
+      "image": "services/art exhibition.jpg",
+      "eventType": "entertainment"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "Music Festival",
+      "date": "2025-04-15",
+      "location": "New York City",
+      "image": "events/music festival.jpeg",
+      "description": "An electrifying music festival featuring top international artists."
+    },
+    {
+      "id": "2",
+      "name": "Tech Conference",
+      "date": "2025-06-20",
+      "location": "San Francisco, CA",
+      "image": "events/tech conference.jpeg",
+      "description": "A gathering of the brightest minds in technology and innovation."
+    },
+    {
+      "id": "3",
+      "name": "Food Expo",
+      "date": "2025-07-05",
+      "location": "Los Angeles, CA",
+      "image": "events/food expo.jpg",
+      "description": "Discover the latest trends and taste amazing dishes from world-class chefs."
+    },
+    {
+      "id": "4",
+      "name": "Art Exhibition",
+      "date": "2025-08-10",
+      "location": "Paris, France",
+      "image": "events/art exhibition.jpg",
+      "description": "An exhibition showcasing the work of contemporary artists from around the world."
+    },
+    {
+      "id": "5",
+      "name": "Wedding Event",
+      "date": "2025-09-15",
+      "location": "Chennai, India",
+      "image": "events/wedding.jpeg",
+      "description": "A wedding is a joyous celebration of love and commitment, uniting two souls in a lifelong journey together."
+    },
+    {
+      "id": "6",
+      "name": "Fashion Show",
+      "date": "2025-10-01",
+      "location": "Milan, Italy",
+      "image": "events/fashion show.jpeg",
+      "description": "A showcase of the latest fashion trends from top designers."
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "ef8f",
+      "name": "Bala",
+      "email": "abc@123",
+      "eventType": "Birthday",
+      "message": "hi"
+    },
+    {
+      "id": "c61e",
+      "name": "kumar",
+      "email": "kumar@gmail.com",
+      "eventType": "Corporate",
+      "message": "exporting good and marketing was good "
+    },
+    {
+      "id": "4089",
+      "name": "john",
+      "email": "johnc@gmail.com",
+      "eventType": "Birthday",
+      "message": "good"
+    },
+    {
+      "id": "b337",
+      "name": "Bala",
+      "email": "bala@123",
+      "eventType": "Birthday",
+      "message": "good"
+    }
+  ],
+  "enquiry-replies": [
+    {
+      "id": "a5ef",
+      "messageId": "ef8f",
+      "subject": "Regarding delay",
+      "message": "sorry for the inconvinience",
+      "estimatedPrice": 2000,
+      "duration": "6 hours"
+    },
+    {
+      "id": "20e1",
+      "messageId": "4089",
+      "subject": "Regarding delay",
+      "message": "sorry for inconvenience, we will make it up",
+      "estimatedPrice": 0,
+      "duration": "within 30 minutes"
+    },
+    {
+      "id": "2b70",
+      "messageId": "b337",
+      "subject": "Birthday",
+      "message": "thankyou",
+      "estimatedPrice": 0,
+      "duration": "NA"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<div class="card">
+    <img [src]="'http://localhost:8090/' + event.image" class="card-img-top" alt="{{ event.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ event.name }}</h5>
+      <p class="card-text">{{ event.description }}</p>
+      <p class="text-muted"><strong>Date:</strong> {{ event.date }}</p>
+      <p class="text-muted"><strong>Location:</strong> {{ event.location }}</p>
+    </div>
+  </div>
+  

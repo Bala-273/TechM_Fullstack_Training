@@ -1,0 +1,9 @@
+<div class="card">
+    <img [src]="'http://localhost:8090/' + service.image" class="card-img-top" alt="{{ service.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ service.name }}</h5>
+      <p class="card-text">{{ service.description }}</p>
+      <p class="text-muted">Price: ₹{{ service.price }}</p>
+    </div>
+  </div>
+  
