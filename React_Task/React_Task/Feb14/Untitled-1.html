@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+<h2>Javascript Confirm</h2>
+<button onclick="pleaseConfirm()">Try</button>
+<p id = "para1"></p>
+<script>
+    function pleaseConfirm() {
+        var txt;
+        if(confirm("Press a button")){
+            txt = "U pressed ok";
+        }
+        else{
+            txt = "U cancelled";
+        }
+        document.getElementById("para1").innerHTML = txt;
+    }
+    </script>
+     </body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Trophies</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/CSK/logos/Logooutline/CSKoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2010 | 2011 | 2018 | 2021 | 2023</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/MI/Logos/Logooutline/MIoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2013 | 2015 | 2017 | 2019 | 2020</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/PBKS/Logos/Logooutline/PBKSoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">0 Trophies</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/KKR/Logos/Logooutline/KKRoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2012 | 2014 | 2024</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/RCB/Logos/Logooutline/RCBoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">0 Trophies</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/SRH/Logos/Logooutline/SRHoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2016</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/LSG/Logos/Logooutline/LSGoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">0 Trophies</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/RR/Logos/Logooutline/RRoutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2008</div>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="https://documents.iplt20.com/ipl/GT/Logos/Logooutline/GToutline.png" 
+                 alt="CSK Logo" class="team-logo">
+            <div class="hover-content">
+                <img src="https://www.iplt20.com/assets/images/teams-trophy.svg" 
+                     alt="IPL Trophy" class="trophy">
+                <div class="years">2022</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

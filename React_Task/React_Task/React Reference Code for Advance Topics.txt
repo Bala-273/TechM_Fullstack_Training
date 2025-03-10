@@ -1,0 +1,508 @@
+HOC
+
+import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+
+const withLoading = (WrappedComponent) => {
+    return function WithLoadingComponent(props) {
+        const [loading, setLoading] = React.useState(false);
+
+        React.useEffect(() => {
+            // Simulate loading data
+            setLoading(true);
+            const timer = setTimeout(() => {
+                setLoading(false);
+            }, 4000);
+
+            return () => clearTimeout(timer);
+        }, []);
+
+        // Pass loading state as a prop to the wrapped component
+        return <WrappedComponent
+            {...props} loading={loading} />;
+    };
+};
+
+// Define a component to be enhanced (functional component)
+const MyComponent = ({ loading }) => (
+    <div>
+        {loading ? <p>Loading...</p> :
+            <p>Data Loaded Successfully!</p>}
+    </div>
+);
+
+// Enhance the component with the HOC
+const EnhancedComponent = withLoading(MyComponent);
+
+   
+
+const root1 = ReactDOM.createRoot(document.getElementById('root1'));
+root1.render(<EnhancedComponent />);
+_________________________________________________________
+Forwarding Ref
+
+import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.aRef = React.createRef()
+    }
+    render() {
+        return (
+            <>
+                <Counter ref={this.aRef} />
+                <button onClick={() => { console.log(this.aRef) }}>
+                    Ref
+                </button>
+            </>
+        )
+    }
+}
+
+const Counter = React.forwardRef((props, ref) => {
+    class Counter extends React.Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                count: 0
+            }
+        }
+        render() {
+            return (
+                <div>
+                    Count: {this.state.count}
+                    <button ref={ref} onClick={() => this.setState(
+                        { count: this.state.count + 1 })}>
+                        Increment
+                    </button>
+                </div>
+            )
+        }
+    }
+    return <Counter />
+})  
+   
+
+const root1 = ReactDOM.createRoot(document.getElementById('root1'));
+root1.render(<App />);
+
+_____________________________________________________
+
+Error Boundary
+
+ABComponentForError.jsx
+
+export default function ABComponentForError() {
+    const undefinedVariable = undefined;
+    console.log(undefinedVariable.abc())
+  return (
+    <h3>ABComponentForError</h3>
+  )
+}
+
+ErrorBoundary
+
+import React, { Component } from "react";
+
+export default class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  componentDidCatch(err, errInfo) {
+    console.error("Error :" + err);
+    console.error("Error info:" + errInfo);
+    this.state({ hasError: true });
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div>
+          ErrorBoundary
+          <h2>Something went wrong!!!!</h2>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+
+____________________________________________________
+
+Creating a Context
+
+// context.js
+import React, { createContext, useState } from 'react';
+
+const MyContext = createContext();
+
+const MyContextProvider = ({ children }) => {
+  const [myState, setMyState] = useState('Hello from Context!');
+
+  return (
+    <MyContext.Provider value={{ myState, setMyState }}>
+      {children}
+    </MyContext.Provider>
+  );
+};
+
+export { MyContext, MyContextProvider };
+
+~~~~~~~~~~~
+Consuming the Context
+
+// MyComponent.js
+import React, { useContext } from 'react';
+import { MyContext } from './context';
+
+const MyComponent = () => {
+  const { myState, setMyState } = useContext(MyContext);
+
+  return (
+    <div>
+      <p>{myState}</p>
+      <button onClick={() => setMyState('Context API is awesome!')}>
+        Update Context
+      </button>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+~~~~~~~~~~~~~~~~~~~
+Wrapping Your App with the Provider
+
+// App.js
+import React from 'react';
+import MyComponent from './MyComponent';
+import { MyContextProvider } from './context';
+
+function App() {
+  return (
+    <MyContextProvider>
+      <div className="App">
+        <h1>My React Context App</h1>
+        <MyComponent />
+      </div>
+    </MyContextProvider>
+  );
+}
+
+export default App;
+
+_____________________________________________________
+
+Portals
+
+
+
+import ReactDOM from 'react-dom'
+function App() {
+
+  // Creating a portal
+  return ReactDOM.createPortal(
+    <h1>Portal demo</h1>,
+    document.getElementById('portal')
+ )
+}
+
+export default App;
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    
+    <!-- new div added to access the child component -->
+    <div id="portal"></div>
+  </body>
+</html>
+_________________________________________________
+15 Custom Hooks to Make your React Component Lightweight
+
+1. useIdle
+The useIdle hook tracks if the user on the page is idle. You can pass two params — ms is time to consider idle and initialState, which allows the user to set idle initially.
+
+import {useIdle} from 'react-use';
+const Demo = () => {
+  const isIdle = useIdle(3e3);
+return (
+    <div>
+      <div>User is idle: {isIdle ? 'Yes 😴' : 'Nope'}</div>
+    </div>
+  );
+};
+2. useInterval
+This hook to use for interval-related functionalities. Which handles clearIntervalon component unmount automatically. It also allows pausing the interval by setting the delay to null.
+
+import * as React from 'react';
+import {useInterval} from 'react-use';
+const Demo = () => {
+  const [count, setCount] = React.useState(0);
+  const [delay, setDelay] = React.useState(1000);
+  const [isRunning, toggleIsRunning] = useBoolean(true);
+useInterval(
+    () => {
+      setCount(count + 1);
+    },
+    isRunning ? delay : null
+  );
+return (
+    <div>
+      <div>
+        delay: <input value={delay} onChange={event => setDelay(Number(event.target.value))} />
+      </div>
+      <h1>count: {count}</h1>
+      <div>
+        <button onClick={toggleIsRunning}>{isRunning ? 'stop' : 'start'}</button>
+      </div>
+    </div>
+  );
+};
+3. useScroll
+This hook is used to listen to the scroll event of the element and rerenders on scrolling. Not required to add the JavaScript event listeners manually.
+
+import {useScroll} from 'react-use';
+const Demo = () => {
+  const scrollRef = React.useRef(null);
+  const {x, y} = useScroll(scrollRef);
+return (
+    <div ref={scrollRef}>
+      <div>x: {x}</div>
+      <div>y: {y}</div>
+    </div>
+  );
+};
+4. useToggle
+This hook is used to toggle between two states like TRUE, FALSE. This approach reduces the manual logic.
+
+import {useToggle} from 'react-use';
+const Demo = () => {
+  const [on, toggle] = useToggle(true);
+return (
+    <div>
+      <div>{on ? 'ON' : 'OFF'}</div>
+      <button onClick={toggle}>Toggle</button>
+      <button onClick={() => toggle(true)}>set ON</button>
+      <button onClick={() => toggle(false)}>set OFF</button>
+    </div>
+  );
+};
+5. useTitle
+This hook is used to set the page title.
+
+import {useTitle} from 'react-use';
+const Demo = () => {
+  useTitle('Hello world!');
+return null;
+};
+
+
+6. usePrevious
+This hook is used to get the previous state. We might not require to write custom logic to get the previous state.
+
+import {usePrevious} from 'react-use';
+const Demo = () => {
+  const [count, setCount] = React.useState(0);
+  const prevCount = usePrevious(count);
+return (
+    <p>
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <p>
+        Now: {count}, before: {prevCount}
+      </p>
+    </p>
+  );
+};
+7. useSetState
+This hook is used to merge objects into their current state, similar to the this.setStatein the class component. If you are using multiple states, it can be brought down to a single object state using useSetState
+
+import {useSetState} from 'react-use';
+const Demo = () => {
+  const [state, setState] = useSetState({});
+return (
+    <div>
+      <pre>{JSON.stringify(state, null, 2)}</pre>
+      <button onClick={() => setState({hello: 'world'})}>hello</button>
+      <button onClick={() => setState({foo: 'bar'})}>foo</button>
+      <button 
+        onClick={() => {
+          setState((prevState) => ({
+            count: (prevState.count || 0) + 1,
+          }))
+        }}
+      >
+        count
+      </button>
+    </div>
+  );
+};
+8. useCookie
+This hook is used to return the current value of a cookie, a callback to update the cookie and a callback to delete the cookie.
+
+import { useCookie } from "react-use";
+const Demo = () => {
+  const [value, updateCookie, deleteCookie] = useCookie("my-cookie");
+  const [counter, setCounter] = useState(1);
+useEffect(() => {
+    deleteCookie();
+  }, []);
+const updateCookieHandler = () => {
+    updateCookie(`my-awesome-cookie-${counter}`);
+    setCounter(c => c + 1);
+  };
+return (
+    <div>
+      <p>Value: {value}</p>
+      <button onClick={updateCookieHandler}>Update Cookie</button>
+      <br />
+      <button onClick={deleteCookie}>Delete Cookie</button>
+    </div>
+  );
+};
+9. usePermission
+This hook is used to get the permission status of the browser API. Pass the API name to get the permission status.
+
+import {usePermission} from 'react-use';
+const Demo = () => {
+  const state = usePermission({ name: 'microphone' });
+return (
+    <pre>
+      {JSON.stringify(state, null, 2)}
+    </pre>
+  );
+};
+10. useDebounce
+This hook is used to delay the event until the wait time is completed. In the below code, the setState is performed after the wait time is completed.
+
+const Demo = () => {
+  const [state, setState] = React.useState('Typing stopped');
+  const [val, setVal] = React.useState('');
+  const [debouncedValue, setDebouncedValue] = React.useState('');
+const [, cancel] = useDebounce(
+    () => {
+      setState('Typing stopped');
+      setDebouncedValue(val);
+    },
+    2000,
+    [val]
+  );
+return (
+    <div>
+      <input
+        type="text"
+        value={val}
+        placeholder="Debounced input"
+        onChange={({ currentTarget }) => {
+          setState('Waiting for typing to stop...');
+          setVal(currentTarget.value);
+        }}
+      />
+      <div>{state}</div>
+      <div>
+        Debounced value: {debouncedValue}
+        <button onClick={cancel}>Cancel debounce</button>
+      </div>
+    </div>
+  );
+};
+11. useGeolocation
+This hook is used to get the user geolocation. useGeolocation returns latitude, longitude, altitude, and more info.
+
+import {useGeolocation} from 'react-use';
+const Demo = () => {
+  const state = useGeolocation();
+return (
+    <pre>
+      {JSON.stringify(state, null, 2)}
+    </pre>
+  );
+};
+12. useNetworkState
+This hook is used to get the network status of the browser. useNetworkState can be used the show the connection status to the user.
+
+import {useNetworkState} from 'react-use';
+const Demo = () => {
+  const state = useNetworkState();
+return (
+    <pre>
+      {JSON.stringify(state, null, 2)}
+    </pre>
+  );
+};
+
+
+13. useCopyToClipboard
+useCopyToClipboard hook is used to copy the text to the clipboard.
+
+const Demo = () => {
+  const [text, setText] = React.useState('');
+  const [state, copyToClipboard] = useCopyToClipboard();
+
+  return (
+    <div>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button type="button" onClick={() => copyToClipboard(text)}>copy text</button>
+      {state.error
+        ? <p>Unable to copy value: {state.error.message}</p>
+        : state.value && <p>Copied {state.value}</p>}
+    </div>
+  )
+}
+
+14. useFavicon
+The useFavicon hook is used to set the favicon of the page.
+
+import {useFavicon} from 'react-use';
+const Demo = () => {
+  useFavicon('https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico');
+return null;
+};
+
+
+15. useError
+useError hook is used to dispatch errors.
+
+import { useError } from 'react-use';
+const Demo = () => {
+  const dispatchError = useError();
+const clickHandler = () => {
+    dispatchError(new Error('Some error!'));
+  };
+return <button onClick={clickHandler}>Click me to throw</button>;
+};
+// In parent app
+const App = () => (
+  <ErrorBoundary>
+    <Demo />
+  </ErrorBoundary>
+);
+
+___________________________________________________________
+React Native
+
+https://reactnative.dev/
+https://www.netguru.com/glossary/react-native
+
+____________________________________________

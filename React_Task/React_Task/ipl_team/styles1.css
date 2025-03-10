@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #071125;
+    margin: 0;
+}
+
+.team-card {
+    position: relative;
+    width: 300px;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.team-logo {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+}
+
+.trophy {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.years {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #004b87;
+    text-align: center;
+}
+
+/* Hover Effects */
+.team-card:hover {
+    transform: scale(1.05);
+    border-radius: 15px;
+}
+
+.team-card:hover .hover-content {
+    opacity: 1;
+    border-radius: 15px;
+}
+
+.team-card:hover .team-logo {
+    transform: scale(0.9);
+    border-radius: 15px;
+}
