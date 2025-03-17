@@ -1,0 +1,16 @@
+{
+  "appTitle": "Quote App",
+  "addQuote": "Add Quote",
+  "quoteText": "Quote Text",
+  "authorName": "Author Name",
+  "noQuotes": "No quotes available. Add some inspiration!",
+  "english": "English",
+  "tamil": "Tamil",
+  "spanish": "Spanish",
+  "showAnotherQuote": "Show Another Quote",
+  "allQuotes": "All Quotes",
+  "noQuotesFound": "No quotes found",
+  "fieldRequired": "Required field",
+  "error": "Error",
+  "saveQuote": "Save Quote"
+}

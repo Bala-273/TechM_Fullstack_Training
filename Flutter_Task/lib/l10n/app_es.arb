@@ -1,0 +1,16 @@
+{
+  "appTitle": "Aplicación de Citas",
+  "addQuote": "Agregar Cita",
+  "quoteText": "Texto de la Cita",
+  "authorName": "Nombre del Autor",
+  "noQuotes": "No hay citas disponibles. ¡Agrega algo de inspiración!",
+  "english": "Inglés",
+  "tamil": "Tamil",
+  "spanish": "Español",
+  "showAnotherQuote": "Mostrar Otra Cita",
+  "allQuotes": "Todas las Citas",
+  "noQuotesFound": "No se encontraron citas",
+  "fieldRequired": "Campo requerido",
+  "error": "Error",
+  "saveQuote": "Guardar Cita"
+}
