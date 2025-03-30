@@ -1,4 +1,4 @@
-# **AEM Digital Asset Management and Component Development Report**  
+# **AEM - Assignment 2**  
 
 ## **1. What is DAM and Why Do We Use It?**  
 Digital Asset Management (DAM) is a system in AEM that allows the storage, management, organization, and delivery of digital assets like images, videos, PDFs, and documents.  
