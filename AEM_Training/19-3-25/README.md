@@ -1,7 +1,3 @@
-Here’s your `README.md` with the exact content you provided, just without emojis and formatting preserved:  
-
----
-
 # **AEM Digital Asset Management and Component Development Report**  
 
 ## **1. What is DAM and Why Do We Use It?**  
@@ -88,7 +84,7 @@ http://localhost:4502/assets.html/content/dam/myTraining/us/en-us/image1.jpg/ren
 
 ---
 
-## **5. Adding FirstName and LastName Fields in HelloWorld Component**  
+## **5. Adding FirstName and LastName Fields in HelloWorld2 Component**  
 
 ### **Steps:**  
 
@@ -99,36 +95,54 @@ http://localhost:4502/assets.html/content/dam/myTraining/us/en-us/image1.jpg/ren
    ```
 2. Open:  
    ```
-   /apps/myTraining/components/content/helloworld/cq:dialog
+   /apps/myTraining/components/content/helloworld2/cq:dialog
    ```
 3. Add two fields:  
 
 ```xml
-<items jcr:primaryType="cq:WidgetCollection">
-    <firstName
-        jcr:primaryType="nt:unstructured"
-        fieldLabel="First Name"
-        name="./firstName"
-        xtype="textfield"/>
-    <lastName
-        jcr:primaryType="nt:unstructured"
-        fieldLabel="Last Name"
-        name="./lastName"
-        xtype="textfield"/>
-</items>
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Properties"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <firstName
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="First Name"
+                            name="./firstName"/>
+                    <lastName
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Last Name"
+                            name="./lastName"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
 ```
 
-### **B) Update helloworld.html**  
+### **B) Update helloworld2.html**  
 ```html
-<div>
-    <p>First Name: ${properties.firstName}</p>
-    <p>Last Name: ${properties.lastName}</p>
+<sly data-sly-use.helloWorld2="com.myTraining.core.models.HelloWorld2"/>
+<div class="helloworld2-component">
+    <p><strong>First Name:</strong> ${helloWorld2.firstName}</p>
+    <p><strong>Last Name:</strong> ${helloWorld2.lastName}</p>
 </div>
+
 ```
 
 ---
 
-## **6. Using @ValueMapValue in HelloWorldModel**  
+## **6. Using @ValueMapValue in HelloWorldModel2**  
 
 ### **Steps:**  
 1. Go to:  
@@ -140,12 +154,14 @@ http://localhost:4502/assets.html/content/dam/myTraining/us/en-us/image1.jpg/ren
 ```java
 package com.myTraining.core.models;
 
-import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.api.resource.Resource;
 
-@Model(adaptables = Resource.class)
-public class HelloWorldModel {
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+
+public class HelloWorld2 {
 
     @ValueMapValue
     private String firstName;
@@ -161,6 +177,7 @@ public class HelloWorldModel {
         return lastName;
     }
 }
+
 ```
 
 3. Build and deploy the bundle  
@@ -242,5 +259,3 @@ In this report, we have successfully covered:
 - Replication configuration and page publishing  
 
 ---
-
-This version keeps your exact content intact, only removing emojis and formatting it properly for `README.md`. Let me know if you need further changes.
