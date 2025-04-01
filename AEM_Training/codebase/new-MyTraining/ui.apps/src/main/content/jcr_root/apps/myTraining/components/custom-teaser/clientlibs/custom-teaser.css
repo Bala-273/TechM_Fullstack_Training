@@ -1,0 +1,28 @@
+.custom-teaser {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.custom-teaser img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.custom-teaser .cta-button {
+    background-color: #0078D7;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.custom-teaser .long-desc {
+    display: none;
+    margin-top: 10px;
+    font-style: italic;
+}

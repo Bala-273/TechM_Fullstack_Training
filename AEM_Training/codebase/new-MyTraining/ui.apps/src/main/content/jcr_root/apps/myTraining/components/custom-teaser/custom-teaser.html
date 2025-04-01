@@ -1,0 +1,18 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.css @ categories='myTraining.customTeaser'}"/>
+
+<sly data-sly-use.teaserModel="com.myTraining.core.models.TeaserModel"/>
+
+<div class="custom-teaser">
+    <h2 class="teaser-title">${teaserModel.title}</h2>
+
+    <img src="${teaserModel.image}" alt="Teaser Image" class="teaser-image"/>
+
+    <p class="short-desc">${teaserModel.shortDescription}</p>
+
+    <button class="cta-button">${teaserModel.ctaLabel}</button>
+
+    <p class="long-desc">${teaserModel.longDescription}</p>
+</div>
+
+<sly data-sly-call="${clientLib.js @ categories='myTraining.customTeaser'}"/>
