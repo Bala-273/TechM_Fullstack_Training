@@ -8,7 +8,10 @@ All the code for the daily tasks and the final project can be accessed from the 
 
 ### Task Structure:
 - A separate folder is created for each **daily task**, with the folder name corresponding to the **date** the task was given.
-- The code for each task is provided in the corresponding folder in the **`README.md`** file format.
+- The entire tasks including the final project share a common codebase directory.
+- Also the code for each task is provided in the corresponding folder in the **`README.md`** file format.
+- The sample output is added for each and every task in a separate folder
+- For final project i.e. building a news website, the output screenshots are in the FinalProject_Output folder
 
 ## Accessing the Code
 
