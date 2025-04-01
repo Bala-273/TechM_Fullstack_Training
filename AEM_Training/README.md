@@ -1,6 +1,6 @@
 # AEM Training 
 
-This repository contains the code for the daily tasks given during the AEM Training and also for the final project, where a news website is built using Adobe Experience Manager (AEM).
+This directory contains the code for the daily tasks given during the AEM Training and also for the final project, where a news website is built using Adobe Experience Manager (AEM).
 
 ## Codebase Directory
 
