@@ -1,0 +1,25 @@
+.journalist-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.journalist-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.journalist-details h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.journalist-details p {
+    font-size: 14px;
+    color: #555;
+}

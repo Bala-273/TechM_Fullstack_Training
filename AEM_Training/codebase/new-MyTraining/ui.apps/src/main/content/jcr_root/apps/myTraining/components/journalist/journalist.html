@@ -1,0 +1,15 @@
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.css @ categories='myTraining.journalist'}"/>
+
+<sly data-sly-use.journalistModel="com.myTraining.core.models.JournalistModel"/>
+
+<div class="journalist-container">
+    <div class="journalist-details">
+        <h2>${properties.name}</h2>
+        <p>${properties.bio}</p>
+    </div>
+</div>
+
+
+

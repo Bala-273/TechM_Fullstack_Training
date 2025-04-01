@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/new-MyTraining/all/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/all/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/dispatcher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/dispatcher/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/it.tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/it.tests/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.apps.structure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.apps.structure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.apps/src/main/content/jcr_root" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.apps/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.config/src/main/content/jcr_root" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.config/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.content/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.content/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.frontend/src/main/content/jcr_root" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/new-MyTraining/ui.frontend/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

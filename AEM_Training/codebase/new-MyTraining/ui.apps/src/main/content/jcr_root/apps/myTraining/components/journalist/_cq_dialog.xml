@@ -1,0 +1,39 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Dialog"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+          title="Journalist Details">
+
+    <items jcr:primaryType="nt:unstructured">
+        <tabs jcr:primaryType="nt:unstructured">
+            <items jcr:primaryType="nt:unstructured">
+
+                <!-- Journalist Info Tab -->
+                <journalistInfo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:title="Journalist Info">
+
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <!-- Name Field -->
+                        <name jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                              fieldLabel="Journalist Name"
+                              name="./name"
+                              required="{Boolean}true"/>
+
+                        <!-- Bio Field -->
+                        <bio jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                             fieldLabel="Journalist Bio"
+                             name="./bio"/>
+
+                    </items>
+                </journalistInfo>
+
+            </items>
+        </tabs>
+    </items>
+</jcr:root>

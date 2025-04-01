@@ -1,0 +1,25 @@
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientLib.css @ categories='myTraining.contact-us'}"/>
+
+
+<sly data-sly-use.contact="com.myTraining.core.models.ContactUsModel"></sly>
+
+<div class="contact-us">
+    <h2>${contact.title}</h2>
+    <p>${contact.description}</p>
+
+    <div class="contact-details">
+        <p><strong>📞 Contact Number:</strong> <a href="tel:${contact.phone}">${contact.phone}</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:${contact.email}">${contact.email}</a></p>
+    </div>
+
+    <div class="social-links">
+        <h3>Follow us on:</h3>
+        <p>
+            <a href="${contact.youtubeUrl}" target="_blank">YouTube</a> |
+            <a href="${contact.instagramUrl}" target="_blank">Instagram</a> |
+            <a href="${contact.twitterUrl}" target="_blank">Twitter</a> |
+        </p>
+    </div>
+</div>

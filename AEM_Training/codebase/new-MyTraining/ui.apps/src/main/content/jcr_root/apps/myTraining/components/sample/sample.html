@@ -1,0 +1,21 @@
+<div class="sample-component">
+    <h2>Sample Component</h2>
+    <div id="sampleResponse">Loading...</div>
+</div>
+
+<script>
+    fetch('/bin/sample-servlet')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('sampleResponse').innerText = data.message;
+        })
+        .catch(error => {
+            document.getElementById('sampleResponse').innerText = "Error fetching data";
+            console.error("Fetch error:", error);
+        });
+</script>

@@ -1,0 +1,51 @@
+<jcr:root
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        jcr:primaryType="cq:Dialog"
+        jcr:title="Contact-Us Component"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Title"
+                    name="./title"/>
+            <description
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                    fieldLabel="Description"
+                    name="./description"/>
+            <phone
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Contact Number"
+                    name="./phone"/>
+            <email
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Email"
+                    name="./email"/>
+            <youtubeUrl
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="YouTube URL"
+                    name="./youtubeUrl"/>
+            <instagramUrl
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Instagram URL"
+                    name="./instagramUrl"/>
+            <twitterUrl
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                    fieldLabel="Twitter URL"
+                    name="./twitterUrl"/>
+
+        </items>
+    </content>
+</jcr:root>
