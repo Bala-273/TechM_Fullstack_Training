@@ -1,27 +1,136 @@
-# MyAngularApp
+# Event Assist Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+## 1. Introduction
 
-## Development server
+The **Event Assist Application** is a Single Page Application (SPA) developed using Angular. It is designed to streamline the process of organizing and managing events by offering users a seamless experience to:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Submit event-related enquiries
+- View available services
+- Explore upcoming events
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 2. Application Details and Workflow
 
-## Build
+The application includes the following modules and features:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **User Authentication**: Users log in with valid credentials stored securely in the browser’s local storage.
+- **Home Page**: Overview of upcoming events and featured services.
+- **Enquiry Submission**: Users can submit event-related enquiries through a form.
+- **Enquiry Response**: Admins can view and respond to customer enquiries.
+- **Services Page**: Displays available services with a filtering feature.
+- **Contact Page**: Shows detailed contact information.
+- **About Page**: Information about the Event Assist platform.
+- **Logout Functionality**: Available from the menu bar on any page.
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 3. Project Structure
 
-## Running end-to-end tests
+```
+src/app/
+│
+├── common/
+│   ├── login/                 # LoginComponent: Manages user login
+│   └── menu-bar/             # MenuBarComponent: Navigation with logout button
+│
+├── data/
+│   └── info.ts               # Static contact data for Contact Page
+│
+├── model/
+│   ├── contact.model.ts      # Contact info model
+│   ├── event.model.ts        # Event details model
+│   └── service.model.ts      # Services model
+│
+├── pages/
+│   ├── about/                # AboutComponent
+│   ├── contact/              # ContactComponent
+│   ├── enquiry/
+│   │   ├── enquiry-form/     # EnquiryFormComponent
+│   │   └── enquiry-response/ # EnquiryResponseComponent
+│   ├── home/                 # HomeComponent
+│   ├── event/
+│   │   ├── event/            # EventComponent
+│   │   └── event-card/       # EventCardComponent
+│   └── services/
+│       ├── service-card/     # ServiceCardComponent
+│       └── services/         # ServicesComponent (includes filtering)
+│
+├── pipes/
+│   └── filter.pipe.ts        # Custom FilterPipe for services
+│
+├── services/
+│   └── api.service.ts        # Handles all HTTP requests
+│
+└── json/
+    └── mock-data.json        # Simulated backend data
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 4. Angular Concepts Implemented
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1. Components
+
+Components are the backbone of the application:
+- `LoginComponent`
+- `MenuBarComponent`
+- `HomeComponent`
+- `EnquiryComponent`
+- `EventComponent`
+- Others...
+
+### 2. Parent-Child Component Communication
+
+Utilized `@Input()` to pass data from parent to child components:
+- `HomeComponent` → `EventCardComponent`
+- `ServicesComponent` → `ServiceCardComponent`
+
+### 3. Structural and Attribute Directives
+
+Used to control the DOM:
+- `*ngFor` for iterating over events/services
+- `*ngIf` for conditional rendering (e.g., logout button)
+
+### 4. @Input Decorator
+
+Facilitates component reusability and data sharing between components.
+
+### 5. Basic Routing
+
+Defined in `app-routing.module.ts`:
+- Routes for Home, About, Contact, Services, and Enquiry pages
+- Lazy loading applied for performance optimization
+
+### 6. Services
+
+Angular Services are used for data handling:
+- `api.service.ts`:
+  - Manages all HTTP interactions
+  - Fetches event, service, and enquiry data
+
+### 7. Observables
+
+Used for asynchronous data handling:
+- API calls return observables
+- Subscribed to in components for real-time UI updates
+
+### 8. API Calls
+
+Implemented via Angular’s `HttpClientModule`:
+- **GET** and **POST** requests
+- Fetches data from mock JSON files
+
+### 9. Forms
+
+Used both **Template-Driven** and **Reactive** Forms:
+
+- **Template-Driven**: `LoginComponent`
+- **Reactive**: `EnquiryResponseComponent` (with validation)
+
+### 10. Pipes
+
+Created a **custom FilterPipe**:
+- Filters services by category or search keywords
+
+---
