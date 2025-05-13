@@ -56,9 +56,9 @@ class _AddQuoteScreenState extends State<AddQuoteScreen> {
         });
         Navigator.pop(context);
       } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.toString())),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(e.toString())));
       }
     }
   }
@@ -77,8 +77,8 @@ class _AddQuoteScreenState extends State<AddQuoteScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
-        title: Text(l10n.addQuote,
-        style: TextStyle(color: Colors.white))),
+        title: Text(l10n.addQuote, style: TextStyle(color: Colors.white)),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -98,7 +98,8 @@ class _AddQuoteScreenState extends State<AddQuoteScreen> {
                   ),
                   onPressed: _submitForm,
                   child: Text(l10n.saveQuote, style: TextStyle(fontSize: 18)),
-            )],
+                ),
+              ],
             ),
           ),
         ),

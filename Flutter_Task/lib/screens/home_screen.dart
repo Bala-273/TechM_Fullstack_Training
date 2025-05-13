@@ -69,25 +69,40 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final currentQuote = _quotes.isNotEmpty
-        ? _quotes[_currentIndex].data() as Map<String, dynamic>
-        : null;
+    final currentQuote =
+        _quotes.isNotEmpty
+            ? _quotes[_currentIndex].data() as Map<String, dynamic>
+            : null;
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:Colors.black,
+        backgroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
-        title: Text(l10n.appTitle,
-        style: TextStyle(color: Colors.white)),
+        title: Text(l10n.appTitle, style: TextStyle(color: Colors.white)),
         actions: [
           DropdownButton<String>(
             value: _currentLang,
             dropdownColor: Colors.black,
             style: TextStyle(color: Colors.white),
             items: [
-              DropdownMenuItem(value: 'en', child: Text(l10n.english, style: TextStyle(color: Colors.white))),
-              DropdownMenuItem(value: 'ta', child: Text(l10n.tamil, style: TextStyle(color: Colors.white))),
-              DropdownMenuItem(value: 'es', child: Text(l10n.spanish, style: TextStyle(color: Colors.white))),
+              DropdownMenuItem(
+                value: 'en',
+                child: Text(
+                  l10n.english,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'ta',
+                child: Text(l10n.tamil, style: TextStyle(color: Colors.white)),
+              ),
+              DropdownMenuItem(
+                value: 'es',
+                child: Text(
+                  l10n.spanish,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ],
             onChanged: (value) {
               if (value != null) {
@@ -164,7 +179,8 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 40),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black, foregroundColor: Colors.white,
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
                 ),
                 onPressed: _updateRandomQuote,
                 child: Text(l10n.showAnotherQuote),
@@ -177,10 +193,11 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         child: Icon(Icons.add),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AddQuoteScreen()),
-        ),
+        onPressed:
+            () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddQuoteScreen()),
+            ),
       ),
     );
   }
