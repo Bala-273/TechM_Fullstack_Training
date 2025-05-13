@@ -1,0 +1,67 @@
+/* AddMovieForm.css */
+
+.add-movie-form-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-movie-form-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #d4d1d1;
+  text-align: center;
+}
+
+.add-movie-form {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-movie-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.add-movie-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.add-movie-form input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.add-movie-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-movie-form button[type='submit'] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-movie-form button[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.add-movie-form .error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
