@@ -39,10 +39,7 @@
   font-size: 1rem;
 }
 
-.add-movie-form input:focus {
-  border-color: #007bff;
-  outline: none;
-}
+
 
 .add-movie-form button[type='submit'] {
   width: 100%;
@@ -60,8 +57,4 @@
   background-color: #0056b3;
 }
 
-.add-movie-form .error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
+

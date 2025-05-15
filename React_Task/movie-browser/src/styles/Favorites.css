@@ -1,5 +1,5 @@
 .favorites {
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -21,11 +21,7 @@
   max-width: 600px;
 }
 
-.favorites-empty h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #e50914;
-}
+
 
 .favorites-empty p {
   color: #999;

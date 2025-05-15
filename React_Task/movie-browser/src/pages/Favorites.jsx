@@ -19,7 +19,7 @@ function Favorites(){
     }
     return (
         <div className="favorites-empty">
-            <h3>No Favorites movie</h3>
+            <h2>No Favorites movie</h2>
             <p>Start adding movies to view your favorites</p>
         </div>
     )
