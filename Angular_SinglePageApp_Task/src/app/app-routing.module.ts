@@ -7,16 +7,18 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { EventComponent } from './pages/home/event/event.component';
 import { EnquiryComponent } from './pages/enquiry/enquiry.component';
 import { LoginComponent } from './common/login/login.component';
+import { AuthGuard } from './auth-guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'login', component: LoginComponent},
-  { path: 'home', component: HomeComponent },
-  { path: 'events', component: EventComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'contact', component: ContactComponent },
-  {path: 'enquiry', component: EnquiryComponent}
+
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'events', component: EventComponent, canActivate:[AuthGuard]},
+  { path: 'about', component: AboutComponent, canActivate:[AuthGuard] },
+  { path: 'services', component: ServicesComponent, canActivate:[AuthGuard] },
+  { path: 'contact', component: ContactComponent, canActivate:[AuthGuard] },
+  {path: 'enquiry', component: EnquiryComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

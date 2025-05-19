@@ -1,8 +1,8 @@
-<div class="container mt-5">
-    <div class="response-form-container shadow-lg p-4">
-        <h3 class="text-center mb-3">Respond to Enquiries</h3>
+<h3 class="text-center mt-5">Respond to Enquiries</h3>
+<div class="container">
+    <div class="alert alert-light p-4 shadow-sm w-50 mx-auto">
         <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
-            <!-- Enquiry ID Dropdown -->
+            
             <div class="form-group">
                 <label for="messageId" class="form-label"><strong>Enquiry ID:</strong></label>
                 <select id="messageId" class="form-select" formControlName="messageId" (change)="onIdChange($event)">
@@ -11,13 +11,11 @@
                 </select>
             </div>
 
-            <!-- Auto-filled Email -->
             <div class="form-group">
                 <label for="email" class="form-label"><strong>Email:</strong></label>
                 <input type="email" id="email" class="form-control" formControlName="email" [disabled]="true" />
             </div>
 
-            <!-- Subject Field -->
             <div class="form-group">
                 <label for="subject" class="form-label"><strong>Subject:</strong></label>
                 <input type="text" id="subject" class="form-control" formControlName="subject" />
@@ -26,7 +24,6 @@
                 </div>
             </div>
 
-            <!-- Message Field -->
             <div class="form-group">
                 <label for="message" class="form-label"><strong>Message:</strong></label>
                 <textarea id="message" class="form-control" formControlName="message" rows="4"></textarea>
@@ -35,7 +32,6 @@
                 </div>
             </div>
 
-            <!-- Estimated Price -->
             <div class="form-group">
                 <label for="estimatedPrice" class="form-label"><strong>Estimated Price:</strong></label>
                 <input type="number" id="estimatedPrice" class="form-control" formControlName="estimatedPrice" />
@@ -44,7 +40,6 @@
                 </div>
             </div>
 
-            <!-- Duration -->
             <div class="form-group">
                 <label for="duration" class="form-label"><strong>Duration:</strong></label>
                 <input type="text" id="duration" class="form-control" formControlName="duration" />
@@ -53,7 +48,6 @@
                 </div>
             </div>
 
-            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="enquiryForm.invalid">Submit</button>
         </form>
     </div>

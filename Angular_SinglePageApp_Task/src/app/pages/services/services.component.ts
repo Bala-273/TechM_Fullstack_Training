@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { EventService } from '../../model/service'; // Renamed to avoid conflicts
+import { EventService } from '../../model/service'; 
 
 @Component({
   selector: 'app-services',
@@ -8,7 +8,7 @@ import { EventService } from '../../model/service'; // Renamed to avoid conflict
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
-  services: EventService[] = []; // Updated variable type
+  services: EventService[] = []; 
   selectedEventType: string = 'All';
   eventTypes: string[] = ['All', 'Wedding', 'Birthday', 'Corporate', 'College', 'Entertainment'];
 
@@ -18,8 +18,7 @@ export class ServicesComponent implements OnInit {
     this.apiService.getServices().subscribe({
       next: (data) => {
         this.services = data;
-      },
-      error: (err) => console.error('Error fetching services:', err)
+      }
     });
   }
 }

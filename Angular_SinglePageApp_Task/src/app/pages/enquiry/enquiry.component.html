@@ -1,38 +1,33 @@
-<h3>Enquiry Form</h3>
+<h3 class="text-center">Enquiry Form</h3>
 
-<div class="alert alert-light p-4 shadow-sm">
+<div class="alert alert-light p-4 shadow-sm w-50 mx-auto">
     <form #enquiryForm="ngForm" (ngSubmit)="submitEnquiry()">
-        <!-- Name Field -->
+
         <div class="form-group">
             <label><strong>Name:</strong></label>
             <input type="text" class="form-control" [(ngModel)]="enquiry.name" name="name" required>
         </div>
 
-        <!-- Email Field -->
         <div class="form-group">
             <label><strong>Email:</strong></label>
             <input type="email" class="form-control" [(ngModel)]="enquiry.email" name="email" required>
         </div>
 
-        <!-- Event Type Dropdown -->
         <div class="form-group">
             <label><strong>Select Event Type:</strong></label>
             <select class="form-select" [(ngModel)]="enquiry.eventType" name="eventType" required>
-                <option value="" disabled selected>-- Select an Event --</option>
+                <option value=""disabled selected>--Select an event--</option>
                 <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
             </select>
         </div>
 
-        <!-- Message Field -->
         <div class="form-group">
             <label><strong>Message:</strong></label>
             <textarea class="form-control" rows="4" [(ngModel)]="enquiry.message" name="message" required></textarea>
         </div>
 
-        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
     </form>
 </div>
 
-<h3>Respond to Enquiries</h3>
 <app-enquiry-response></app-enquiry-response>

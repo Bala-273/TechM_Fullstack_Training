@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contact } from '../../model/contact';
+import { ContactDetails } from '../../model/contactDetails';
 import { contacts } from '../../data/info';
 
 @Component({
@@ -8,5 +8,5 @@ import { contacts } from '../../data/info';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  contactlist: Contact[] = contacts;
+  contactlist: ContactDetails[] = contacts;
 }

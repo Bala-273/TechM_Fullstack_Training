@@ -1,13 +1,13 @@
 .filter-container {
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Align items vertically */
+    justify-content: center; 
+    align-items: center; 
   }
   
   .filter-dropdown {
-    width: 50%; /* Medium width */
-    max-width: 500px; /* Prevent it from getting too large */
+    width: 50%; 
+    max-width: 500px; 
     padding: 8px;
-    font-size: 16px; /* Make text readable */
+    font-size: 16px; 
   }
   

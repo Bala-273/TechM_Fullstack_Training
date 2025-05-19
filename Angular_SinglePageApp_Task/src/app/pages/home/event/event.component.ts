@@ -16,8 +16,7 @@ export class EventComponent implements OnInit {
     this.apiService.getEvents().subscribe({
       next: (data) => {
         this.events = data;
-      },
-      error: (err) => console.error('Error fetching events:', err)
+      }
     });
   }
 }

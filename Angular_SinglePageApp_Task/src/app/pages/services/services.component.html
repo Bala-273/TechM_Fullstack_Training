@@ -1,6 +1,6 @@
 <h3 class="text-center">Our Event Services</h3>
 
-<div class="filter-container text-center my-3">
+<div class="filter-container my-3">
   <label for="eventType" class="fw-bold me-2">Event Type:</label>
   <select [(ngModel)]="selectedEventType" class="form-select filter-dropdown">
     <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
@@ -9,7 +9,6 @@
 
 
 
-<!-- Display Filtered Services -->
 <div class="row">
   <div *ngFor="let service of services | eventFilter:selectedEventType" class="col-md-4">
     <app-service-card [service]="service"></app-service-card>

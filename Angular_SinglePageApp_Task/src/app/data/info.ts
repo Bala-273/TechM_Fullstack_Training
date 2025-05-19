@@ -1,6 +1,6 @@
-import { Contact } from '../model/contact';
+import { ContactDetails } from '../model/contactDetails';
 
-export const contacts: Contact[] = [
+export const contacts: ContactDetails[] = [
     {
         name: "Chennai Event Center",
         address: "No. 5/639, Old Mahabalipuram Road",

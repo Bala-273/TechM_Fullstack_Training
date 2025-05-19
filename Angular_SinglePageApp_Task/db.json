@@ -239,6 +239,13 @@
       "email": "bala@123",
       "eventType": "Birthday",
       "message": "good"
+    },
+    {
+      "id": "65dc",
+      "name": "John",
+      "email": "john123@gmail.com",
+      "eventType": "College",
+      "message": "need to book a college farewell event"
     }
   ],
   "enquiry-replies": [
