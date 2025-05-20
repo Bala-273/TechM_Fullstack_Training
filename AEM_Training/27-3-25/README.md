@@ -24,3 +24,14 @@ A **Language Copy** in AEM is a translated version of a site created independent
 5. **Configure** rollout settings and enable inheritance from `/content/us/en`  
 6. **Save** and verify that the Live Copy is created  
 7. **Test** the rollout process by making changes in `/content/us/en` and rolling them out to the Live Copy  
+
+## **4. Create a sample McDonald's page in AEM**  
+
+### **Procedure:**
+1. **Navigate to** → `AEM Start → Sites`  
+2. **Select** `/content` as the source site  
+3. **Click** `Create → McDonald's site`
+4. **Create** the required pages
+5. **Add** components to each page
+
+     
