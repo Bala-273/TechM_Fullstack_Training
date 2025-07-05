@@ -55,6 +55,8 @@ public class ParkingManager {
 
         LocalDateTime entryTime = LocalDateTime.now();
         Vehicle vehicle = new Vehicle(vehicleNumber, ownerName, slotId, entryTime);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
 
         boolean success = parkingDAO.checkInVehicle(vehicle);
         if (success) {
@@ -64,7 +66,7 @@ public class ParkingManager {
             System.out.println("Owner: "+ ownerName);
             System.out.println("Vehicle no: "+vehicleNumber);
             System.out.println("Slot ID: "+ slotId);
-            System.out.println("Entry Time: "+ entryTime);
+            System.out.println("Entry Time: "+ entryTime.format(formatter));
         } else {
             System.out.println("Failed to check in vehicle.");
         }

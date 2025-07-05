@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quotes_app/utils/snackbar_util.dart';
 import 'package:quotes_app/views/screens/signup_screen.dart';
 import 'package:quotes_app/views/widget_tree.dart';
+import 'package:quotes_app/views/widgets/custom_textfield.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -62,13 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: 20.0),
-                    TextField(
+                    CustomTextfield(
                       controller: passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(
-                        label: Text('Password'),
-                        border: OutlineInputBorder(),
-                      ),
+                      label: 'Password',
                     ),
                   ],
                 ),

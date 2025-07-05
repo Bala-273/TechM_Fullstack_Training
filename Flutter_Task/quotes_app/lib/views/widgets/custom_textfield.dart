@@ -40,7 +40,7 @@ class _CustomTextfieldState extends State<CustomTextfield> {
         label: Text(widget.label),
         border: OutlineInputBorder(),
         suffixIcon:
-            widget.obscureText //obscure texg is true for password field
+            widget.obscureText //obscure text is true for password field
                 ? IconButton(
                   icon: Icon(
                     _obscure ? Icons.visibility_off : Icons.visibility,
