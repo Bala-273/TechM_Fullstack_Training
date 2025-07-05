@@ -1,0 +1,14 @@
+{
+  "appTitle": "Quotify",
+  "logout": "Se déconnecter",
+  "language": "Langue",
+  "welcome": "Bienvenue sur Quotify !",
+  "chooseLanguage": "Choisir la langue",
+  "quoteLabel": "Citation",
+  "authorLabel": "Auteur",
+  "addQuote": "Ajouter la citation",
+  "enterQuote": "Entrez la citation",
+  "enterAuthor": "Entrez le nom de l'auteur",
+  "quotes": "Citations",
+  "home": "Accueil"
+}

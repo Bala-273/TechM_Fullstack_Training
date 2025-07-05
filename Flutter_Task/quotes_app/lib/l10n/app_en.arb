@@ -1,0 +1,14 @@
+{
+  "appTitle": "Quotify",
+  "logout": "Logout",
+  "language": "Language",
+  "welcome": "Welcome to Quotify!",
+  "chooseLanguage": "Choose Language",
+  "quoteLabel": "Quote",
+  "authorLabel": "Author",
+  "addQuote": "Add Quote",
+  "enterQuote": "Enter Quote",
+  "enterAuthor": "Enter Author name",
+  "quotes": "Quotes",
+  "home": "Home"
+}
