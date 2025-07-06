@@ -34,7 +34,7 @@ class _SignupScreenState extends State<SignupScreen> {
           MaterialPageRoute(builder: (context) => WidgetTree()),
         );
       } catch (e) {
-        SnackbarUtil.showError(context, 'Registration failed');
+        SnackbarUtil.showError(context, 'Registration failed ${e}');
       }
     }
   }

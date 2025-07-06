@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quotes_app/main.dart';
 import 'package:quotes_app/services/auth_service.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:quotes_app/services/locale_service.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -35,15 +35,21 @@ class AppDrawer extends StatelessWidget {
                           ListTile(
                             title: Text('English'),
                             onTap: () {
-                              Locale newLocale = Locale('en');
-                              setLocale(context, newLocale);
+                              LocaleService.setLocale(
+                                context,
+                                const Locale('en'),
+                              );
+                              Navigator.pop(context);
                             },
                           ),
                           ListTile(
                             title: Text('Francais'),
                             onTap: () {
-                              Locale newLocale = Locale('fr');
-                              setLocale(context, newLocale);
+                              LocaleService.setLocale(
+                                context,
+                                const Locale('fr'),
+                              );
+                              Navigator.pop(context);
                             },
                           ),
                         ],
@@ -66,9 +72,5 @@ class AppDrawer extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void setLocale(BuildContext context, Locale newLocale) {
-    MyApp.setLocale(context, newLocale);
   }
 }

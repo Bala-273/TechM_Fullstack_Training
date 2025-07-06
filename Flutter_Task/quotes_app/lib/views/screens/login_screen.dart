@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (context) => WidgetTree()),
       );
     } catch (e) {
-      SnackbarUtil.showError(context, 'Login failed');
+      SnackbarUtil.showError(context, 'Login failed ${e}');
     }
   }
 
