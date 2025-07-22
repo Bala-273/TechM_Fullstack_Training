@@ -3,53 +3,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Anagrams {
-    public static List<Integer> findAnagrams(String s, String p) {
-        List<Integer> result = new ArrayList<>();
-        if (s == null || p == null || s.length() < p.length()) {
-            return result;
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first string: ");
+        String str1 = sc.nextLine();
+        System.out.println("Enter second string: ");
+        String str2 = sc.nextLine();
+
+        if(areAnagrams(str1, str2)){
+            System.out.println("The strings are Anagrams");
         }
-
-        int[] pCount = new int[26];
-        int[] sCount = new int[26];
-
-        for (char c : p.toCharArray()) {
-            pCount[c - 'a']++;
+        else {
+            System.out.println("The strings are not Anagrams");
         }
-
-        for (int i = 0; i < p.length(); i++) {
-            sCount[s.charAt(i) - 'a']++;
-        }
-
-        for (int i = p.length(); i < s.length(); i++) {
-            if (matches(pCount, sCount)) {
-                result.add(i - p.length());
-            }
-
-            sCount[s.charAt(i) - 'a']++;
-            sCount[s.charAt(i - p.length()) - 'a']--;
-        }
-
-        if (matches(pCount, sCount)) {
-            result.add(s.length() - p.length());
-        }
-
-        return result;
+        sc.close();
     }
 
-    private static boolean matches(int[] pCount, int[] sCount) {
-        for (int i = 0; i < 26; i++) {
-            if (pCount[i] != sCount[i]) {
-                return false;
-            }
+    public static boolean areAnagrams(String str1, String str2){
+        str1.replaceAll("\\s", "").toLowerCase();
+        str2.replaceAll("\\s", "").toLowerCase();
+
+        if(str1.length() != str2.length()){
+            return  false;
         }
-        return true;
+
+        char[] chArr1 = str1.toCharArray();
+        char[] chArr2 = str2.toCharArray();
+
+        Arrays.sort(chArr1);
+        Arrays.sort(chArr2);
+
+        return Arrays.equals(chArr1, chArr2);
     }
 
-    public static void main(String[] args) {
-        String s = "cbadbacesbacd";
-        String p = "abc";
-
-        List<Integer> result = findAnagrams(s, p);
-        System.out.println(result);
-    }
 }
